@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# Test output files
+sourceCheckerError.txt
+homepage_links.txt
+links_error.txt
+
+# PyCharm
+.idea/
+

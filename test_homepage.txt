@@ -1,0 +1,143 @@
+Base Site: Selenium.dev
+Test Cases: 4
+Passed: 4
+Written in: Python (pytest), Selenium Web driver + Pytest frameworks
+
+Overview:
+Automated test cases for selenium.dev to validate:
+- basic functionality
+- navigation links
+- drop down Menu's
+- UI
+- External partner/sponsor links
+
+Test Environment:
+Browser: Google Chrome (version 136.0.7103.113)
+WebDriver: ChromeDriver
+Testing Framework: Pytest
+Operating System: Windows
+Test Completed: 15.05.2025
+Website URL: https://www.selenium.dev/
+
+Test Objectives (Cases):
+- Verify specific contents on the homepage.
+- Ensure navigation links are clickable and functional
+- Validate the "About" dropdown menu items lead to expected pages
+- confirm homepage links (main, partner, sponsor) are accessible and navigable
+
+Test scope:
+Content Verified: Checks for Specific text in page title + source
+Navigation Links: Tests header navigation links, Downloads, Documentation etc**
+Drop Down functionality: Validates Menu items in drop down
+Homepage Links: Tests main feature links and external partner/sponsor links
+
+Test Cases:
+
+1. test_page_content
+- Verify Content is present on the homepage
+Steps:
+- Navigate to www.selenium.dev/
+    - assert to make sure the "selenium" is within the title page
+- Verify presence of specific phrases in page source in a list
+    - or else, print the phrase which conflicts with the list into an error file named
+        sourceCheckerError.txt
+        - Raise the Assertion error
+
+Status: Passed
+
+2. test_navigation_links
+- Verify the header navigation links are clickable and load correctly
+
+Steps:
+- Navigate to Base Site
+- Click navigation link
+    - Downloads
+    - Documentation
+    - Projects
+    - Support
+    - Blog
+- Return to the home page once completed.
+
+Assertions:
+- each link is clickable (verified by the webDriverWait) - which waits for element to appear
+
+Status: Passed
+
+3. test_about_dropdown
+- Validate about drop down is working and clickable
+
+Steps:
+- navigate to the base site
+- click the about drop down
+
+Click on each menu item:
+About Selenium
+Structure and Governance
+Ecosystem
+History
+Get Involved
+Sponsors
+Sponsor Us
+- Return to the homepage after completed.
+
+Error handling:
+- uses specific waits if you cannot handle correctly
+
+4. test_homepage_links
+- Test if the links to external partners and sponsors are clickable and navigable
+Steps:
+- navigate to main site
+Tests the main 3 features first:
+- web driver
+- IDE
+- Selenium Grid
+
+For each main link:
+- click the link, scroll down and up the page
+- return to the main page
+
+Test partner Links:
+BrowserStack
+Saucelabs
+LambdaTest
+
+Test sponsor links:
+Bright Data
+Applitools
+
+For each partner/Sponsor link:
+Scroll the element into a view - click the link
+- wait to return to the home page which will be initiated after the waitfor
+
+Assertions - check if they are clickable and Webdriverwait - wait until it can be clickable
+
+Error handling;
+- logs missing main links to homepage_links.txt
+- Logs missing in partner/sponsor links to links_error.txt
+
+Status: Passed
+
+Potential Future Issues:
+Potential DOM changes on the website could cause some conflicts to unchanged lists containing the elements/CSS
+- these however can be mitigated if view the error txt.
+
+Conclusion:
+- this project has captured validating the core functionality of the Websites homepage and several other errors.
+- It handles error handling and ensures reliable execution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
